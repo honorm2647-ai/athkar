@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أذكاري | أذكار الصباح والمساء الصحيحة</title>
+<meta name="description" content="موقع أذكار الصباح والمساء بأحاديث صحيحة ومصادرها، مع مسبحة إلكترونية وتحكم بحجم الخط والوضع الليلي." />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dawod/thmanyah-font-web/index.css" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤲</text></svg>" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">☪</span>
+      <div>
+        <strong class="brand-title">أذكاري</strong>
+        <small class="brand-sub">حصن المسلم اليومي</small>
+      </div>
+    </div>
+    <div class="controls" role="toolbar" aria-label="إعدادات العرض">
+      <div class="font-controls" aria-label="حجم الخط">
+        <button id="fontDecrease" class="icon-btn" title="تصغير الخط" aria-label="تصغير الخط">أ−</button>
+        <span id="fontSizeLabel" class="font-label" title="حجم الخط الحالي">100%</span>
+        <button id="fontIncrease" class="icon-btn" title="تكبير الخط" aria-label="تكبير الخط">أ+</button>
+      </div>
+      <button id="themeToggle" class="icon-btn theme-btn" aria-label="تبديل المظهر" title="ليلي / نهاري">
+        <span id="themeIcon">🌙</span>
+        <span class="theme-text">ليلي</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="hero-badge" id="timeBadge">🌅 أذكار الصباح</p>
+      <h1>صباحُك ومساؤك<br />محفوظٌ بالذكر</h1>
+      <p class="hero-desc">جميع الأذكار صحيحة من <strong>حصن المسلم</strong> ومدققة مع مصادرها ودرجتها. اضغط على المسبحة لكل ذكر، وتتبع تقدمك حتى الإتمام.</p>
+      <div class="hero-actions">
+        <div class="tabs" role="tablist" aria-label="نوع الأذكار">
+          <button class="tab active" data-tab="morning" role="tab" aria-selected="true">🌅 الصباح</button>
+          <button class="tab" data-tab="evening" role="tab" aria-selected="false">🌙 المساء</button>
+        </div>
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="ابحث في الأذكار…" aria-label="ابحث في الأذكار" />
+        </div>
+      </div>
+      <div class="progress-card">
+        <div class="progress-info">
+          <span id="progressText">0 من 0 مكتمل</span>
+          <span id="totalCount">0 تسبيحة متبقية</span>
+        </div>
+        <div class="progress-bar" aria-hidden="true"><div id="progressFill"></div></div>
+        <div class="progress-actions">
+          <button id="resetBtn" class="ghost-btn">↺ إعادة التصفير</button>
+          <span class="hint">يُحفظ تقدمك تلقائياً في جهازك</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-side" aria-hidden="true">
+      <div class="dua-card">
+        <p class="dua-small">قال تعالى</p>
+        <p class="dua-verse">﴿ فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ ﴾</p>
+        <p class="dua-src">[البقرة: 152]</p>
+        <div class="dua-times">
+          <div><strong>الصباح</strong><span>من الفجر للشروق</span></div>
+          <div><strong>المساء</strong><span>من العصر للمغرب</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div id="completeBanner" class="complete-banner hidden">🎉 ما شاء الله! أتممت جميع الأذكار، تقبّل الله منك وجعلك في حفظه. <button id="completeReset">بدء ورد جديد</button></div>
+  <div id="cardsGrid" class="grid"></div>
+  <p id="emptyState" class="empty hidden">لا توجد نتائج مطابقة لبحثك.</p>
+
+  <section class="sources-note">
+    <h2>منهجية التوثيق</h2>
+    <ul>
+      <li>اعتمدنا على <strong>حصن المسلم</strong> للقحطاني مع مراجعة الأصول: صحيح البخاري ومسلم، سنن أبي داود والترمذي والنسائي وابن ماجه، ومسند أحمد.</li>
+      <li>كل بطاقة تذكر <strong>المصدر ورقم الحديث ودرجته</strong> كما صححها الألباني وابن باز وغيرهما.</li>
+      <li>الأذكار المشتركة صيغت بلفظ الصباح والمساء بدقة (أصبحنا / أمسينا).</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <p>صُنع بحب لخدمة الذاكرين • الخط المستخدم: <strong>خط ثمانية</strong> • الأحاديث للمراجعة العلمية وليست للفتوى</p>
+    <p class="footer-dua">اللهم أعنا على ذكرك وشكرك وحسن عبادتك</p>
+  </div>
+</footer>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
